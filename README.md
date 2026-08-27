@@ -1,4 +1,4 @@
-# Hy3-TraceJudge
+# Hy3-AlgoAudit
 
 > 面向算法竞赛的解题过程评估与错误定位系统
 
