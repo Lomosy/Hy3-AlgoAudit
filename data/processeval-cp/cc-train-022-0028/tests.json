@@ -1,0 +1,122 @@
+[
+  {
+    "input": "4\n5 2\n00000\n00111\n1 5\n1 3\n2 1\n00\n01\n1 2\n10 6\n1111111111\n0110001110\n1 10\n5 9\n7 10\n1 7\n3 5\n6 10\n5 2\n10000\n11000\n2 5\n1 3\n",
+    "expected": "\nYES\nNO\nYES\nNO\n"
+  },
+  {
+    "input": "1\n4 0\n1010\n0100\n1 6\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0011\n0100\n3 2\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0010\n1110\n0 2\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1011\n1100\n2 16\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1010\n0000\n1 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0001\n1110\n0 1\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0111\n0100\n4 -1\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1110\n0000\n1 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0011\n0100\n2 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0010\n0111\n1 1\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0111\n0101\n4 0\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0011\n0111\n1 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0010\n0000\n1 8\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0111\n0110\n3 1\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0111\n0100\n2 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0011\n0000\n4 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0111\n0100\n3 0\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0101\n0000\n4 -1\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0010\n0000\n4 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0101\n1000\n4 0\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0011\n0110\n2 2\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1011\n1100\n2 8\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0010\n0000\n0 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0011\n0100\n4 3\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0001\n1100\n2 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1101\n0100\n1 8\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n0101\n1000\n8 0\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 1\n0101\n0110\n1 4\n",
+    "expected": "NO\n"
+  },
+  {
+    "input": "1\n4 0\n1101\n0000\n1 1\n",
+    "expected": "NO\n"
+  }
+]

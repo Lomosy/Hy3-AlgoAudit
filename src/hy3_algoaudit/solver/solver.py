@@ -1,28 +1,72 @@
-"""解题器：调用Hy3 生成结构化题解"""
-
+"""Structured S1-S7 solving agent."""
 from __future__ import annotations
 
-import re
+from ..llm import Budget, LLMClient
+from ..schemas import CodeBlock, StepContent, StructuredSolution
+from ..utils import LLMOutputError, extract_json
+from . import prompts
 
-from ..llm import Hy3Client
-from .prompt import SYSTEM_PROMPT,build_prompt
-from .schema import Solution
 
+class Solver:
+    def __init__(self, llm: LLMClient):
+        self.llm = llm
 
-# 按 "## S数字 标题" 切分，捕获到下一节标题或文末为止
-SECTION_RE = re.compile(
-    r"^##\s+(S[1-7])[^\n]*\n(.*?)(?=^##\s+S[1-7]|\Z)",
-    re.DOTALL | re.MULTILINE
-)
+    # ---------------------------------------------------------------- parse
 
-def parse_solution(problem:str,raw:str) -> Solution:
-    """把模型原始输出解析为结构化Solution"""
-    steps = {m.group(1): m.group(2).strip() for m in SECTION_RE.finditer(raw)}
-    return Solution(problem=problem,steps=steps,raw=raw)
+    def parse(self, raw: str) -> StructuredSolution:
+        data = extract_json(raw)
+        steps_raw = data.get("steps")
+        if not isinstance(steps_raw, list) or not steps_raw:
+            raise LLMOutputError("solution JSON missing non-empty 'steps' list")
+        steps = []
+        for s in steps_raw:
+            if not isinstance(s, dict):
+                continue
+            sid = str(s.get("step_id", "")).upper()
+            if sid.startswith("S") and sid[1:].isdigit():
+                sid = f"S{int(sid[1:])}"
+            try:
+                steps.append(StepContent(
+                    step_id=sid,
+                    title=str(s.get("title", "")),
+                    content=str(s.get("content", "")),
+                ))
+            except Exception:
+                continue  # drop malformed steps; structural checker will flag
+        code_raw = data.get("code") or {}
+        if isinstance(code_raw, str):
+            code_raw = {"language": "python", "code": code_raw}
+        code = CodeBlock(
+            language=str(code_raw.get("language", "python")),
+            code=str(code_raw.get("code", "")),
+        )
+        sol = StructuredSolution(
+            problem_id=data.get("problem_id"),
+            steps=steps,
+            code=code,
+        )
+        # de-duplicate / order by S1..S7
+        seen: dict[str, StepContent] = {}
+        for s in sol.steps:
+            seen[s.step_id] = s
+        sol.steps = [seen[k] for k in sorted(seen, key=lambda x: int(x[1:]))]
+        return sol
 
-def solve(problem:str,client:Hy3Client | None = None,**kwargs)->Solution:
-    """生成结构化题解。kwargs透传给chat() （如reasoning_effort"""
-    client = client or Hy3Client()
-    raw = client.chat(build_prompt(problem),system=SYSTEM_PROMPT,**kwargs)
-    return parse_solution(problem,raw)
-    
+    # ---------------------------------------------------------------- solve
+
+    def solve(self, problem_text: str, budget: Budget = Budget.HIGH,
+              max_retries: int = 2) -> StructuredSolution:
+        """Generate a structured solution; retry parse failures with a nudge."""
+        system = prompts.SOLVER_SYSTEM
+        user = prompts.SOLVER_USER.format(problem=problem_text)
+        last_err: Exception | None = None
+        for attempt in range(max_retries + 1):
+            raw = self.llm.complete(system, user, budget=budget)
+            try:
+                return self.parse(raw)
+            except LLMOutputError as e:
+                last_err = e
+                user = (prompts.SOLVER_USER.format(problem=problem_text)
+                        + f"\n\n注意：你上一次的输出无法解析（{e}），"
+                          "请严格只输出符合要求的 JSON。")
+        raise LLMOutputError(f"solver failed to produce parseable JSON: {last_err}")

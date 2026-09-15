@@ -1,0 +1,62 @@
+{
+  "id": "cc-train-030-0007",
+  "name": "102_D. Buses",
+  "cc_id": "cc-train-030-0007",
+  "source": "CODEFORCES",
+  "difficulty": 1700,
+  "difficulty_name": "D",
+  "difficulty_bin": "1600-1999",
+  "difficulty_bin_source": "cf_rating",
+  "category": "DP",
+  "category_source": "cf_tags",
+  "category_matched": [
+    "dp",
+    "dynamic programming"
+  ],
+  "categories_all": [
+    "DP",
+    "DataStructure",
+    "BinarySearch",
+    "Simulation"
+  ],
+  "tags": [
+    "binary search",
+    "data structures",
+    "dp"
+  ],
+  "taco_tags": [
+    "Dynamic programming",
+    "Sorting",
+    "Data structures"
+  ],
+  "taco_skill_types": [
+    "Dynamic programming",
+    "Sorting",
+    "Data structures"
+  ],
+  "taco_difficulty": "MEDIUM_HARD",
+  "taco_match": "contest_index",
+  "taco_url": "https://codeforces.com/problemset/problem/102/D",
+  "time_limit_seconds": 2.0,
+  "time_limit_source": "dataset",
+  "memory_limit_bytes": 265000000,
+  "io_mode": "stdio",
+  "comparison": "token",
+  "tests": {
+    "total": 30,
+    "by_origin": {
+      "public": 3,
+      "generated": 15,
+      "private": 12
+    },
+    "cases_digest": "a38d35b0511c6a280211dd42d72c14ad6615b1c0e5d33bac0be474a29df1077d"
+  },
+  "reference": {
+    "language": "python",
+    "sha256": "6a5be5f055505b6edad8d798aa3c02c6ed45c864abf2d1753ff2a0a37041bd10",
+    "verified": true
+  },
+  "n_solutions": 118,
+  "n_python3_solutions": 3,
+  "n_incorrect_solutions": 274
+}

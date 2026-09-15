@@ -1,0 +1,122 @@
+[
+  {
+    "input": "15\nyamatonadeshiko\n10\n1 a\n2 a\n3 a\n4 a\n5 a\n1 b\n2 b\n3 b\n4 b\n5 b\n",
+    "expected": "3\n4\n5\n7\n8\n1\n2\n3\n4\n5\n"
+  },
+  {
+    "input": "6\nkoyomi\n3\n1 o\n4 o\n4 m\n",
+    "expected": "3\n6\n5\n"
+  },
+  {
+    "input": "10\naaaaaaaaaa\n2\n10 b\n10 z\n",
+    "expected": "10\n10\n"
+  },
+  {
+    "input": "100\ndddddccccdddddaaaaabbbbbbbbbbbbbaaacdcabbacccacccccbdbbadddbbddddbdaaccacdddbbbaddddbbbbdcbbbdddddda\n50\n54 b\n60 d\n45 b\n52 c\n52 a\n48 a\n54 b\n45 a\n47 d\n50 d\n53 a\n34 a\n51 b\n48 d\n47 d\n47 a\n48 d\n53 b\n52 d\n54 d\n46 a\n38 a\n52 b\n49 a\n49 b\n46 c\n54 a\n45 b\n35 c\n55 c\n51 c\n46 d\n54 d\n50 a\n33 c\n46 a\n50 b\n50 a\n54 a\n32 b\n55 b\n49 a\n39 d\n49 a\n46 b\n48 c\n47 b\n47 b\n47 a\n46 b\n",
+    "expected": "85\n87\n76\n69\n68\n63\n85\n60\n71\n74\n69\n46\n82\n72\n71\n62\n72\n84\n76\n78\n61\n50\n83\n64\n80\n60\n70\n76\n49\n72\n68\n70\n78\n66\n47\n61\n81\n66\n70\n53\n86\n64\n63\n64\n77\n62\n78\n78\n62\n77\n"
+  },
+  {
+    "input": "5\naaaaa\n1\n1 a\n",
+    "expected": "5\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n4 a\n3 a\n4 a\n5 a\n2 b\n2 b\n3 b\n6 b\n4 c\n",
+    "expected": "3\n7\n5\n7\n8\n2\n2\n3\n6\n4\n"
+  },
+  {
+    "input": "200\nddeecdbbbeeeeebbbbbaaaaaaaaaaaaaaaaaaaaaaabbcaacccbeeeeddddddddddddccccccdffeeeeecccccbbbbaaaaedfffffaadeeeeeeeedddddaaaaaaaaaaaaaabbbbbcaadddeefffbbbbcccccccccccbbbbbbeeeeeeeffffffdffffffffffffaaaaab\n10\n43 f\n118 d\n165 f\n72 f\n48 f\n2 a\n61 e\n94 d\n109 f\n16 a\n",
+    "expected": "64\n144\n193\n98\n69\n25\n79\n117\n137\n41\n"
+  },
+  {
+    "input": "4\nddbb\n16\n3 c\n3 b\n2 a\n1 c\n4 e\n4 a\n3 d\n2 a\n2 d\n4 c\n3 a\n2 c\n4 b\n1 c\n2 b\n1 d\n",
+    "expected": "3\n4\n2\n1\n4\n4\n4\n2\n4\n4\n3\n2\n4\n1\n4\n3\n"
+  },
+  {
+    "input": "6\nkoyomi\n3\n2 p\n3 o\n4 n\n",
+    "expected": "2\n5\n4\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n2 a\n4 a\n3 a\n4 a\n5 a\n1 b\n2 b\n3 b\n4 b\n4 b\n",
+    "expected": "4\n7\n5\n7\n8\n1\n2\n3\n4\n4\n"
+  },
+  {
+    "input": "4\nddbb\n16\n3 c\n3 b\n1 a\n1 b\n4 d\n4 a\n3 d\n2 a\n2 d\n4 c\n3 a\n2 c\n4 b\n1 c\n2 b\n1 d\n",
+    "expected": "3\n4\n1\n3\n4\n4\n4\n2\n4\n4\n3\n2\n4\n1\n4\n3\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n4 a\n6 a\n4 a\n5 a\n1 b\n2 b\n3 b\n6 b\n4 b\n",
+    "expected": "3\n7\n9\n7\n8\n1\n2\n3\n6\n4\n"
+  },
+  {
+    "input": "4\nddbb\n16\n3 c\n3 b\n1 a\n1 c\n4 e\n4 a\n3 d\n2 a\n2 d\n4 d\n3 a\n2 c\n4 b\n1 c\n2 b\n1 d\n",
+    "expected": "3\n4\n1\n1\n4\n4\n4\n2\n4\n4\n3\n2\n4\n1\n4\n3\n"
+  },
+  {
+    "input": "6\nkoyomi\n3\n1 o\n4 o\n4 n\n",
+    "expected": "3\n6\n4\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n4 a\n3 a\n4 a\n5 a\n1 b\n2 b\n3 b\n6 b\n4 b\n",
+    "expected": "3\n7\n5\n7\n8\n1\n2\n3\n6\n4\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n5 a\n3 a\n4 a\n5 a\n2 b\n2 b\n4 c\n6 b\n4 d\n",
+    "expected": "3\n8\n5\n7\n8\n2\n2\n4\n6\n5\n"
+  },
+  {
+    "input": "4\nabcc\n24\n1 c\n4 d\n3 c\n1 d\n1 c\n1 b\n3 b\n2 c\n3 d\n3 d\n4 c\n2 a\n4 d\n1 a\n1 b\n4 a\n4 d\n3 b\n4 b\n3 c\n3 a\n2 d\n1 a\n4 b\n",
+    "expected": "3\n4\n4\n1\n3\n2\n4\n4\n3\n3\n4\n3\n4\n2\n2\n4\n4\n4\n4\n4\n4\n2\n2\n4\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n4 a\n3 a\n4 a\n5 a\n2 b\n2 b\n3 c\n6 b\n4 c\n",
+    "expected": "3\n7\n5\n7\n8\n2\n2\n3\n6\n4\n"
+  },
+  {
+    "input": "6\nkoyomi\n3\n2 p\n1 o\n4 n\n",
+    "expected": "2\n3\n4\n"
+  },
+  {
+    "input": "100\ndddddccccdddddaaaaabbbbbbbbbbbbbaaacdcabbacccacccccbdbbadddbbddddbdaabcacdddbbbaddddbbbbdcbbbdddddda\n50\n54 b\n60 d\n45 b\n52 c\n52 a\n48 a\n54 b\n45 a\n47 d\n50 d\n53 a\n34 a\n51 b\n48 d\n47 d\n47 a\n48 d\n53 b\n52 d\n54 d\n46 a\n38 a\n52 b\n49 a\n49 b\n46 c\n54 a\n45 b\n35 c\n55 c\n51 c\n46 d\n54 d\n50 a\n33 c\n46 a\n50 b\n50 a\n54 a\n32 b\n55 c\n49 a\n33 d\n30 a\n46 c\n48 c\n47 b\n47 b\n47 a\n46 b\n",
+    "expected": "86\n87\n77\n68\n68\n63\n86\n60\n71\n74\n69\n46\n83\n72\n71\n62\n72\n85\n76\n78\n61\n50\n84\n64\n81\n60\n70\n77\n49\n71\n66\n70\n78\n66\n47\n61\n82\n66\n70\n54\n71\n64\n56\n42\n60\n62\n79\n79\n62\n78\n"
+  },
+  {
+    "input": "100\ndddddccccdddddaaaaabbbbbbbbbbbbbaaacdcabbacccacccccbdbbadddbbddddbdaabcacdddbbbaddddbbbbdcbbbdddddda\n50\n54 b\n60 d\n45 b\n52 c\n52 a\n48 a\n54 b\n45 a\n47 d\n50 d\n53 a\n34 a\n51 b\n48 d\n47 d\n47 a\n48 d\n53 b\n52 d\n54 d\n46 a\n38 a\n52 b\n49 a\n49 b\n46 c\n54 a\n45 b\n35 c\n55 c\n51 c\n46 d\n54 d\n50 a\n33 c\n46 a\n50 b\n50 a\n54 a\n32 b\n55 b\n49 a\n33 d\n49 a\n46 b\n48 c\n47 b\n47 b\n47 a\n46 b\n",
+    "expected": "86\n87\n77\n68\n68\n63\n86\n60\n71\n74\n69\n46\n83\n72\n71\n62\n72\n85\n76\n78\n61\n50\n84\n64\n81\n60\n70\n77\n49\n71\n66\n70\n78\n66\n47\n61\n82\n66\n70\n54\n87\n64\n56\n64\n78\n62\n79\n79\n62\n78\n"
+  },
+  {
+    "input": "100\ndddddccccdddddaaaaabbbbbbbbbbbbbaaacdcabbacccacccccbdbbadddbbddddbdaaccacdddbbbaddddbbbbdcbbbdddddda\n50\n54 b\n60 d\n45 b\n52 c\n52 a\n48 a\n54 b\n45 a\n47 d\n50 d\n53 a\n34 a\n51 b\n48 d\n47 d\n47 a\n48 d\n53 b\n52 d\n54 d\n46 a\n38 a\n52 b\n49 a\n49 b\n46 c\n54 a\n45 b\n35 c\n55 c\n51 c\n46 d\n54 d\n50 a\n33 c\n46 a\n50 b\n50 a\n54 a\n32 b\n55 b\n49 b\n53 d\n49 a\n46 b\n48 c\n47 b\n47 b\n47 a\n46 b\n",
+    "expected": "85\n87\n76\n69\n68\n63\n85\n60\n71\n74\n69\n46\n82\n72\n71\n62\n72\n84\n76\n78\n61\n50\n83\n64\n80\n60\n70\n76\n49\n72\n68\n70\n78\n66\n47\n61\n81\n66\n70\n53\n86\n80\n77\n64\n77\n62\n78\n78\n62\n77\n"
+  },
+  {
+    "input": "4\ncbcc\n12\n4 b\n4 c\n1 b\n2 a\n3 b\n2 c\n4 a\n2 a\n2 b\n3 a\n1 b\n2 c\n",
+    "expected": "4\n4\n2\n2\n4\n4\n4\n2\n3\n3\n2\n4\n"
+  },
+  {
+    "input": "4\nddbb\n16\n3 c\n3 b\n1 a\n1 c\n4 e\n4 a\n3 d\n2 a\n2 d\n4 c\n3 a\n2 c\n4 b\n1 c\n2 b\n1 d\n",
+    "expected": "3\n4\n1\n1\n4\n4\n4\n2\n4\n4\n3\n2\n4\n1\n4\n3\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 b\n5 a\n6 a\n4 a\n5 a\n2 c\n2 b\n4 c\n6 b\n4 d\n",
+    "expected": "1\n8\n9\n7\n8\n2\n2\n4\n6\n5\n"
+  },
+  {
+    "input": "15\nyamatonadesiiko\n10\n1 a\n3 a\n3 a\n4 a\n5 a\n2 b\n2 b\n3 c\n6 b\n4 d\n",
+    "expected": "3\n5\n5\n7\n8\n2\n2\n3\n6\n5\n"
+  },
+  {
+    "input": "200\nddeecdbbbeeeeebbbbbaaaaaaaaaaaaaaaaaaaaaaabbcaacccbeeeeddddddddddddccccccdffeeeeecccccbbbbaaaaedfffffaadeeeeeeeedddddaaaaaaaaaaaaaabbbbbcaadddeefffbbbbcccccccccccbbbbbbeeeeeeeffffffdffffffffffffaaaaab\n10\n43 g\n118 d\n165 f\n72 f\n48 f\n2 a\n61 e\n94 d\n109 f\n16 a\n",
+    "expected": "43\n144\n193\n98\n69\n25\n79\n117\n137\n41\n"
+  },
+  {
+    "input": "100\ndddddccccdddddaaaaabbbbbbbbbbbbbaaacdcabbacccacccccbdbbadddbbddddbdaabcacdddbbbaddddbbbbdcbbbdddddda\n50\n54 b\n60 d\n45 b\n52 c\n52 a\n48 a\n54 b\n45 a\n47 d\n50 d\n53 a\n34 a\n51 b\n48 d\n47 d\n47 a\n48 d\n53 b\n52 d\n54 d\n46 a\n38 a\n52 b\n49 a\n49 b\n46 c\n54 a\n45 b\n35 c\n55 c\n51 c\n46 d\n54 d\n50 a\n33 c\n46 a\n50 b\n50 a\n54 a\n32 b\n55 c\n49 a\n33 d\n30 a\n48 c\n48 c\n47 b\n47 b\n47 a\n46 b\n",
+    "expected": "86\n87\n77\n68\n68\n63\n86\n60\n71\n74\n69\n46\n83\n72\n71\n62\n72\n85\n76\n78\n61\n50\n84\n64\n81\n60\n70\n77\n49\n71\n66\n70\n78\n66\n47\n61\n82\n66\n70\n54\n71\n64\n56\n42\n62\n62\n79\n79\n62\n78\n"
+  },
+  {
+    "input": "5\naabaa\n1\n1 a\n",
+    "expected": "5\n"
+  },
+  {
+    "input": "4\nddbb\n16\n3 c\n3 b\n2 a\n1 c\n4 e\n3 a\n3 d\n2 a\n2 d\n4 c\n3 a\n2 c\n4 b\n1 c\n2 b\n1 d\n",
+    "expected": "3\n4\n2\n1\n4\n3\n4\n2\n4\n4\n3\n2\n4\n1\n4\n3\n"
+  }
+]

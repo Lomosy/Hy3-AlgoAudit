@@ -5,12 +5,32 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hy3-algoaudit"
 version = "0.1.0"
-description = "Hy3-AlgoAudit: process evaluation and error localization for competitive programming"
+description = "Hy3-AlgoAudit: Outcome x Process dual-track evaluation and first-error localization for competitive programming"
+readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
 dependencies = [
     "openai>=1.0",
     "python-dotenv>=1.0",
+    "pydantic>=2.5",
+    # --- 数据构建（builder 模块） ---
+    "PyYAML>=6.0",
+    "zstandard>=0.22",
+    "brotli>=1.1",
+    "pyarrow>=15.0",
+    "fsspec>=2023.1",
 ]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+sandbox = ["psutil>=5.9"]
+
+[project.scripts]
+hy3-audit = "hy3_algoaudit.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+exclude = ["hy3_algoaudit.egg-info"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

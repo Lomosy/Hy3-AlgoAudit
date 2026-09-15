@@ -1,0 +1,63 @@
+{
+  "id": "cc-train-036-0059",
+  "name": "814_C. An impassioned circulation of affection",
+  "cc_id": "cc-train-036-0059",
+  "source": "CODEFORCES",
+  "difficulty": 1600,
+  "difficulty_name": "C",
+  "difficulty_bin": "1600-1999",
+  "difficulty_bin_source": "cf_rating",
+  "category": "DP",
+  "category_source": "cf_tags",
+  "category_matched": [
+    "dp",
+    "dynamic programming"
+  ],
+  "categories_all": [
+    "DP",
+    "DataStructure",
+    "Simulation"
+  ],
+  "tags": [
+    "brute force",
+    "dp",
+    "strings",
+    "two pointers"
+  ],
+  "taco_tags": [
+    "Dynamic programming",
+    "Amortized analysis",
+    "Complete search",
+    "String algorithms"
+  ],
+  "taco_skill_types": [
+    "Dynamic programming",
+    "Amortized analysis",
+    "Complete search"
+  ],
+  "taco_difficulty": "MEDIUM_HARD",
+  "taco_match": "contest_index",
+  "taco_url": "https://codeforces.com/problemset/problem/814/C",
+  "time_limit_seconds": 2.0,
+  "time_limit_source": "dataset",
+  "memory_limit_bytes": 256000000,
+  "io_mode": "stdio",
+  "comparison": "token",
+  "tests": {
+    "total": 30,
+    "by_origin": {
+      "public": 3,
+      "generated": 25,
+      "private": 2
+    },
+    "cases_digest": "1b3f5a1f27deba7a088ba874f1a0997d49a63cb9f8a083ae8e1704c7bc23e14e"
+  },
+  "reference": {
+    "language": "python",
+    "sha256": "916cb8259cdd0972042d57109ceb2128cde2ba84bb620f6d04108b925ab70f3d",
+    "verified": true
+  },
+  "n_solutions": 410,
+  "n_python3_solutions": 27,
+  "n_incorrect_solutions": 425
+}

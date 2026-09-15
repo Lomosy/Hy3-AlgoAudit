@@ -1,0 +1,122 @@
+[
+  {
+    "input": "abacabaca\n",
+    "expected": "3\naca\nba\nca\n"
+  },
+  {
+    "input": "abaca\n",
+    "expected": "0\n"
+  },
+  {
+    "input": "hzobjysjhbebobkoror\n",
+    "expected": "20\nbe\nbeb\nbko\nbo\nbob\neb\nebo\nhb\nhbe\njh\njhb\nko\nkor\nob\nor\nror\nsj\nsjh\nys\nysj\n"
+  },
+  {
+    "input": "baacababa\n",
+    "expected": "2\naba\nba\n"
+  },
+  {
+    "input": "aabaaxyzxyxy\n",
+    "expected": "5\nxy\nyxy\nyzx\nzx\nzxy\n"
+  },
+  {
+    "input": "abaaaxxx\n",
+    "expected": "2\nxx\nxxx\n"
+  },
+  {
+    "input": "xxabaaa\n",
+    "expected": "1\naa\n"
+  },
+  {
+    "input": "aaaaababaaaaaaaaaaaa\n",
+    "expected": "6\naa\naaa\nab\nba\nbaa\nbab\n"
+  },
+  {
+    "input": "ceqocaoblwdrhpdbrpinlryplpqfwpxemdtyivffa\n",
+    "expected": "67\nao\naob\nbl\nblw\nbr\nbrp\ndb\ndbr\ndr\ndrh\ndt\ndty\nem\nemd\nfa\nffa\nfw\nfwp\nhp\nhpd\nin\ninl\niv\nivf\nlp\nlpq\nlr\nlry\nlw\nlwd\nmd\nmdt\nnl\nnlr\nob\nobl\npd\npdb\npi\npin\npl\nplp\npq\npqf\npx\npxe\nqf\nqfw\nrh\nrhp\nrp\nrpi\nry\nryp\nty\ntyi\nvf\nwd\nwdr\nwp\nwpx\nxe\nxem\nyi\nyiv\nyp\nypl\n"
+  },
+  {
+    "input": "baaaaxx\n",
+    "expected": "1\nxx\n"
+  },
+  {
+    "input": "ayaxyyxya\n",
+    "expected": "3\nxya\nya\nyx\n"
+  },
+  {
+    "input": "tbdbdpkluawodlrwldjgplbiylrhuywkhafbkiuoppzsjxwbaqqiwagprqtoauowtaexrhbmctcxwpmplkyjnpwukzwqrqpv\n",
+    "expected": "170\nae\naex\naf\nafb\nag\nagp\naq\naqq\nau\nauo\naw\nawo\nba\nbaq\nbi\nbiy\nbk\nbki\nbm\nbmc\nct\nctc\ncx\ncxw\ndj\ndjg\ndl\ndlr\nex\nexr\nfb\nfbk\ngp\ngpl\ngpr\nha\nhaf\nhb\nhbm\nhu\nhuy\niu\niuo\niw\niwa\niy\niyl\njg\njgp\njn\njnp\njx\njxw\nkh\nkha\nki\nkiu\nkl\nklu\nky\nkyj\nkz\nkzw\nlb\nlbi\nld\nldj\nlk\nlky\nlr\nlrh\nlrw\nlu\nlua\nmc\nmct\nmp\nmpl\nnp\nnpw\noa\noau\nod\nodl\nop\nopp\now\nowt\npk\npkl\npl\nplb\nplk\npm\npmp\npp\nppz\npr\nprq\npv\npw\npwu\npz\npzs\nqi\nqiw\nqpv\nqq\nqqi\nqr\nqrq\nqt\nqto\nrh\nrhb\nrhu\nrq\nrqt\nrw\nrwl\nsj\nsjx\nta\ntae\ntc\ntcx\nto\ntoa\nua\nuaw\nuk\nukz\nuo\nuop\nuow\nuy\nuyw\nwa\nwag\nwb\nwba\nwk\nwkh\nwl\nwld\nwo\nwod\nwp\nwpm\nwq\nwqr\nwt\nwta\nwu\nwuk\nxr\nxrh\nxw\nxwb\nxwp\nyj\nyjn\nyl\nylr\nyw\nywk\nzs\nzsj\nzw\nzwq\n"
+  },
+  {
+    "input": "oawtxikrpvfuzugjweki\n",
+    "expected": "25\neki\nfu\nfuz\ngj\ngjw\nik\nikr\njw\njwe\nki\nkr\nkrp\npv\npvf\nrp\nrpv\nug\nugj\nuz\nuzu\nvf\nvfu\nwe\nzu\nzug\n"
+  },
+  {
+    "input": "dddddaabbbbbb\n",
+    "expected": "4\naab\nab\nbb\nbbb\n"
+  },
+  {
+    "input": "gzqgckv\n",
+    "expected": "1\nkv\n"
+  },
+  {
+    "input": "hzybjosjhbebobkoror\n",
+    "expected": "20\nbe\nbeb\nbko\nbo\nbob\neb\nebo\nhb\nhbe\njh\njhb\nko\nkor\nob\nor\nos\nosj\nror\nsj\nsjh\n"
+  },
+  {
+    "input": "dedddaabbbbbb\n",
+    "expected": "4\naab\nab\nbb\nbbb\n"
+  },
+  {
+    "input": "abcdeabzzzzzzzz\n",
+    "expected": "5\nab\nabz\nbz\nzz\nzzz\n"
+  },
+  {
+    "input": "xxxaabba\n",
+    "expected": "2\nba\nbba\n"
+  },
+  {
+    "input": "baaaxayxy\n",
+    "expected": "3\nay\nxy\nyxy\n"
+  },
+  {
+    "input": "xxxaaaaa\n",
+    "expected": "2\naa\naaa\n"
+  },
+  {
+    "input": "safgmgpzljarfswowdxqhuhypycmiddyvehjtnlflzknznrukdsbatxoytzxkqngopeipbythhbhfkvlcdxwqrxumbtcgiosjnbeorkzsrfarqofsrcwsfpyheaszjpkjysrcxbzebkxzovdchhososo\n",
+    "expected": "273\nar\narf\narq\nas\nasz\nat\natx\nba\nbat\nbe\nbeo\nbh\nbhf\nbk\nbkx\nbt\nbtc\nby\nbyt\nbz\nbze\ncd\ncdx\ncg\ncgi\nch\nchh\ncm\ncmi\ncw\ncws\ncx\ncxb\ndc\ndch\ndd\nddy\nds\ndsb\ndx\ndxq\ndxw\ndy\ndyv\nea\neas\neb\nebk\neh\nehj\nei\neip\neo\neor\nfa\nfar\nfk\nfkv\nfl\nflz\nfp\nfpy\nfs\nfsr\nfsw\ngi\ngio\ngo\ngop\ngp\ngpz\nhb\nhbh\nhe\nhea\nhf\nhfk\nhh\nhhb\nhj\nhjt\nhos\nhu\nhuh\nhy\nhyp\nid\nidd\nio\nios\nip\nipb\nja\njar\njn\njnb\njp\njpk\njt\njtn\njy\njys\nkd\nkds\nkj\nkjy\nkn\nknz\nkq\nkqn\nkv\nkvl\nkx\nkxz\nkz\nkzs\nlc\nlcd\nlf\nlfl\nlj\nlja\nlz\nlzk\nmb\nmbt\nmi\nmid\nnb\nnbe\nng\nngo\nnl\nnlf\nnr\nnru\nnz\nnzn\nof\nofs\nop\nope\nor\nork\nos\nosj\noso\nov\novd\now\nowd\noy\noyt\npb\npby\npe\npei\npk\npkj\npy\npyc\npyh\npz\npzl\nqh\nqhu\nqn\nqng\nqo\nqof\nqr\nqrx\nrc\nrcw\nrcx\nrf\nrfa\nrfs\nrk\nrkz\nrq\nrqo\nru\nruk\nrx\nrxu\nsb\nsba\nsf\nsfp\nsj\nsjn\nso\nsr\nsrc\nsrf\nsw\nswo\nsz\nszj\ntc\ntcg\nth\nthh\ntn\ntnl\ntx\ntxo\ntz\ntzx\nuh\nuhy\nuk\nukd\num\numb\nvd\nvdc\nve\nveh\nvl\nvlc\nwd\nwdx\nwo\nwow\nwq\nwqr\nws\nwsf\nxb\nxbz\nxk\nxkq\nxo\nxoy\nxq\nxqh\nxu\nxum\nxw\nxwq\nxz\nxzo\nyc\nycm\nyh\nyhe\nyp\nypy\nys\nysr\nyt\nyth\nytz\nyv\nyve\nze\nzeb\nzj\nzjp\nzk\nzkn\nzl\nzlj\nzn\nznr\nzo\nzov\nzs\nzsr\nzx\nzxk\n"
+  },
+  {
+    "input": "lmnxtobrknqjvnzwadpccrlvisxyqbxxmghvl\n",
+    "expected": "59\nad\nadp\nbr\nbrk\nbx\nbxx\ncc\nccr\ncr\ncrl\ndp\ndpc\ngh\nhvl\nis\nisx\njv\njvn\nkn\nknq\nlv\nlvi\nmg\nmgh\nnq\nnqj\nnz\nnzw\nob\nobr\npc\npcc\nqb\nqbx\nqj\nqjv\nrk\nrkn\nrl\nrlv\nsx\nsxy\nvi\nvis\nvl\nvn\nvnz\nwa\nwad\nxm\nxmg\nxx\nxxm\nxy\nxyq\nyq\nyqb\nzw\nzwa\n"
+  },
+  {
+    "input": "glaoyryxrgsysy\n",
+    "expected": "10\ngs\ngsy\nrgs\nry\nryx\nsy\nxr\nysy\nyx\nyxr\n"
+  },
+  {
+    "input": "bbbbbccaaaaaa\n",
+    "expected": "4\naa\naaa\nca\ncca\n"
+  },
+  {
+    "input": "aaabax\n",
+    "expected": "0\n\n"
+  },
+  {
+    "input": "xxxxxababc\n",
+    "expected": "5\nab\naba\nabc\nba\nbc\n"
+  },
+  {
+    "input": "ysysgrxyryoalg\n",
+    "expected": "13\nalg\nlg\noa\nrx\nrxy\nry\nryo\nxy\nxyr\nyo\nyoa\nyr\nyry\n"
+  },
+  {
+    "input": "b`aaxayxy\n",
+    "expected": "3\nay\nxy\nyxy\n"
+  },
+  {
+    "input": "nmwmklodxnwrfdrshxhhdrsngmoqyyduzvpaiyqdgyhnkpxplcgxjlftkdyfzewuajiuvslwqewasbzwfjnodjwpniekbhzsgkpnyslunopdjnkrhjyqkfetpmhwtockdfuyixvvmxpprytewmagbybhjrcl\n",
+    "expected": "279\nag\nagb\nai\naiy\naj\naji\nas\nasb\nbh\nbhj\nbhz\nby\nbyb\nbz\nbzw\ncg\ncgx\nck\nckd\ncl\ndf\ndfu\ndg\ndgy\ndj\ndjn\ndjw\ndr\ndrs\ndu\nduz\ndx\ndxn\ndy\ndyf\nek\nekb\net\netp\new\newa\newm\newu\nfd\nfdr\nfe\nfet\nfj\nfjn\nft\nftk\nfu\nfuy\nfz\nfze\ngb\ngby\ngk\ngkp\ngm\ngmo\ngx\ngxj\ngy\ngyh\nhd\nhdr\nhh\nhhd\nhj\nhjr\nhjy\nhn\nhnk\nhw\nhwt\nhx\nhxh\nhz\nhzs\nie\niek\niu\niuv\nix\nixv\niy\niyq\nji\njiu\njl\njlf\njn\njnk\njno\njr\njw\njwp\njy\njyq\nkb\nkbh\nkd\nkdf\nkdy\nkf\nkfe\nkp\nkpn\nkpx\nkr\nkrh\nlc\nlcg\nlf\nlft\nlo\nlod\nlu\nlun\nlw\nlwq\nma\nmag\nmh\nmhw\nmo\nmoq\nmx\nmxp\nng\nngm\nni\nnie\nnk\nnkp\nnkr\nno\nnod\nnop\nnw\nnwr\nny\nnys\noc\nock\nod\nodj\nodx\nop\nopd\noq\noqy\npa\npai\npd\npdj\npl\nplc\npm\npmh\npn\npni\npny\npp\nppr\npr\npry\npx\npxp\nqd\nqdg\nqe\nqew\nqk\nqkf\nqy\nqyy\nrcl\nrf\nrfd\nrh\nrhj\nrs\nrsh\nrsn\nry\nryt\nsb\nsbz\nsg\nsgk\nsh\nshx\nsl\nslu\nslw\nsn\nsng\nte\ntew\ntk\ntkd\nto\ntoc\ntp\ntpm\nua\nuaj\nun\nuno\nuv\nuvs\nuy\nuyi\nuz\nuzv\nvm\nvmx\nvp\nvpa\nvs\nvsl\nvv\nvvm\nwa\nwas\nwf\nwfj\nwm\nwma\nwp\nwpn\nwq\nwqe\nwr\nwrf\nwt\nwto\nwu\nwua\nxh\nxhh\nxj\nxjl\nxn\nxnw\nxp\nxpl\nxpp\nxv\nxvv\nyb\nybh\nyd\nydu\nyf\nyfz\nyh\nyhn\nyi\nyix\nyq\nyqd\nyqk\nys\nysl\nyt\nyte\nyy\nyyd\nze\nzew\nzs\nzsg\nzv\nzvp\nzw\nzwf\n"
+  }
+]

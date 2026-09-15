@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "one_shot": {
+      "n_total": 2,
+      "n_initial_failed": 1,
+      "n_solved": 1,
+      "overall_ac_rate": 0.5,
+      "refine_at_k_on_failed": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "avg_rounds_when_fixed": null,
+      "tokens": 0
+    },
+    "exec_only": {
+      "n_total": 2,
+      "n_initial_failed": 1,
+      "n_solved": 1,
+      "overall_ac_rate": 0.5,
+      "refine_at_k_on_failed": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "avg_rounds_when_fixed": null,
+      "tokens": 6240
+    },
+    "process_guided": {
+      "n_total": 2,
+      "n_initial_failed": 1,
+      "n_solved": 1,
+      "overall_ac_rate": 0.5,
+      "refine_at_k_on_failed": {
+        "1": 0.0,
+        "2": 0.0
+      },
+      "avg_rounds_when_fixed": null,
+      "tokens": 18436
+    },
+    "_meta": {
+      "dataset": "demo/samples",
+      "private": null,
+      "max_k": 2,
+      "mock": true,
+      "model": "mock"
+    }
+  },
+  "records": [
+    {
+      "problem": "a_plus_b",
+      "difficulty": 800,
+      "initial_exec": "WA",
+      "strategies": {
+        "one_shot": {
+          "solved_round": null,
+          "final_exec": "WA",
+          "notes": [],
+          "cost": {
+            "tokens": 0,
+            "llm_calls": 0
+          }
+        },
+        "exec_only": {
+          "solved_round": null,
+          "final_exec": "WA",
+          "notes": [
+            "round 1: exec=WA",
+            "round 2: exec=WA"
+          ],
+          "cost": {
+            "tokens": 6240,
+            "llm_calls": 2
+          }
+        },
+        "process_guided": {
+          "solved_round": null,
+          "dual_round": null,
+          "final_exec": "WA",
+          "notes": [
+            "round 1: first_error=S7 (E7) -> exec=WA",
+            "round 2: first_error=S7 (E7) -> exec=WA"
+          ],
+          "cost": {
+            "tokens": 18436,
+            "llm_calls": 6
+          }
+        }
+      }
+    },
+    {
+      "problem": "max_subarray",
+      "difficulty": 1200,
+      "initial_exec": "AC",
+      "strategies": {
+        "one_shot": {
+          "solved_round": 0,
+          "final_exec": "AC",
+          "notes": [],
+          "cost": {
+            "tokens": 0,
+            "llm_calls": 0
+          }
+        },
+        "exec_only": {
+          "solved_round": 0,
+          "final_exec": "AC",
+          "notes": [],
+          "cost": {
+            "tokens": 0,
+            "llm_calls": 0
+          }
+        },
+        "process_guided": {
+          "solved_round": 0,
+          "dual_round": 0,
+          "final_exec": "AC",
+          "notes": [],
+          "cost": {
+            "tokens": 0,
+            "llm_calls": 0
+          }
+        }
+      }
+    }
+  ]
+}

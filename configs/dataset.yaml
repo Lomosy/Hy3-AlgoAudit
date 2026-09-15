@@ -1,0 +1,113 @@
+# ============================================================
+#  ProcessEval-CP 构建配置
+#  所有可调参数集中在此，构建时整份配置会写入 manifest 以保证可复现。
+# ============================================================
+
+# --- 路径 ---
+paths:
+  codecontests_dir: data/codecontests_data/dm-code_contests
+  taco_dir: data/taco
+  interim_dir: data/interim
+  # 公开评测集：每题一个目录（题面 + 元数据 + 用例 + 参考解 + 公开候选）
+  dataset_dir: data/processeval-cp
+  # 私有材料：注入候选、首错/错误类型标注、参考解验证证据（不入 git）
+  private_dir: private/processeval-cp
+
+# --- 题集规模 ---
+dataset:
+  name: ProcessEval-CP
+  version: 0.1.0
+  n_problems: 180          # 目标题数（技术方案书 15.2 为 60~100，本项目扩到 150~200）
+  seed: 42
+  # 扫描范围：null 表示全部 train 分片；小样本阶段先用前若干个分片
+  scan_train_shards: null
+
+# --- 入池硬门槛 ---
+filters:
+  exclude_sources: [0]              # UNKNOWN_SOURCE 直接排除
+  require_python3_solution: true    # 必须存在 language=3 的正确解
+  require_stdio: true               # 排除 input_file/output_file 类题目
+  # 排除「答案不唯一」的题：这类题在 Codeforces 由特殊判题器判定，数据集只存了
+  # 其中一个参考答案，用精确比对会把输出另一组合法方案的参考解误判成 WA。
+  # 实测 11 道抽样题中撞上 1 例（1141_G），故按题面句式排除。
+  exclude_multiple_answers: true
+  # 排除「交互题」：输入在运行时由程序提问、判题器回答，静态用例无从表达，
+  # 判题结果必然无意义（实测 1146_C 题面无 interactive 字样，只有 6 处 flush）。
+  exclude_interactive: true
+  max_time_limit_seconds: 8.0       # 超过则 Python 必然超时
+  default_time_limit_seconds: 2.0   # 非 CF 题目缺少 time_limit 时的默认值
+  default_memory_limit_bytes: 268435456
+  min_total_tests: 20               # 测试太少不足以构成可靠判定
+  max_total_tests: 300
+  max_test_field_bytes: 65536       # 单个 input/output 字段上限（64 KiB）
+  max_description_bytes: 131072
+  max_unclassified_ratio: 0.15      # 无法归类题目占比上限
+
+# --- 分层采样配额 ---
+sampling:
+  categories: [DP, Graph, DataStructure, BinarySearch, Greedy, Simulation]
+  # 难度箱：（下限含，上限不含），基于 cf_rating
+  rating_bins:
+    - [0, 1200, "<1200"]
+    - [1200, 1600, "1200-1599"]
+    - [1600, 2000, "1600-1999"]
+    - [2000, 2400, "2000-2399"]
+    - [2400, 100000, ">=2400"]
+  min_per_cell: 3                   # 每个非空单元至少抽多少题
+  max_per_category_share: 0.3       # 单一类别占比上限，避免类别失衡
+
+# --- 落盘裁剪上限（控制公开仓库体积） ---
+output_limits:
+  max_cases_per_problem: 30
+  max_case_field_bytes: 32768       # 单个 input/output 落到磁盘的上限（32 KiB）
+  max_problem_total_bytes: 262144   # 单题测试用例总字节上限（256 KiB）
+  # 测试用例挑选优先级：public（题面样例，必留）→ private → generated
+  test_priority: [public, private, generated]
+
+# --- 参考解验证 ---
+verification:
+  max_cases: 50                     # 每题最多跑多少条用例（每用例一个子进程，是耗时瓶颈）
+  timeout_cap_seconds: 8.0
+  memory_limit_mb: 512              # 与 sandbox.SandboxLimits 同口径
+  # 逐条尝试的同题解上限（数据集里 CF 题常有数百条 Py3 解）
+  max_solutions_tried: 8
+  workers: 4
+  # 分词精确比对失败、且失败形态符合「数值表示差异」时的容差。
+  # 判据为 Codeforces 约定：|got-want| <= max(1e-6, 1e-6*|want|)。
+  # 仅在必要时生效，生效的题目会在 meta.json 的 comparison 字段记录，
+  # 应用侧按题取出同一模式判题。
+  float_tolerance: 1.0e-6
+
+# --- TACO 关联 ---
+taco:
+  repo: BAAI/TACO
+  mirror: https://hf-mirror.com
+  # 只取需要的列，避免把 question/solutions/input_output 全量读进内存
+  columns: [url, name, source, difficulty, tags, skill_types, time_limit, memory_limit]
+  use_solutions: false              # TACO 的 solutions 作参考解备份（默认关闭，需要时再开）
+  # 保留原始分片（2.42 GB）：磁盘代价可接受，且后续若需 TACO 的 solutions 可免于二次下载
+  keep_raw: true
+
+# --- 四类候选过程构造（技术方案书 15.3）---
+# 落盘位置直接由 paths 推导，不再单列目录：
+#   公开候选（correct + natural）→ <dataset_dir>/<pid>/variants.json
+#   私有候选（injected + ac_invalid）→ <private_dir>/<pid>/variants.json
+#   全部标注              → <private_dir>/<pid>/labels.json
+candidates:
+  reasoning_effort: high
+  temperature: 0.9
+
+  # 正确候选：最多尝试几次生成，要求其 S7 代码实测全 AC
+  correct_max_retries: 3
+  # 自然候选：不加「必须正确」约束，用于研究模型自发错误
+  natural_samples: 1
+
+  # 注入候选：按题目顺序轮转分配错误类型，保证 E1~E8 覆盖均衡。
+  # 每题的注入条数越多，单题标注越全，但模型调用量线性上升。
+  injected_error_types: [E1, E2, E3, E4, E5, E6, E7, E8]
+  injected_per_problem: 2
+  # AC-but-Invalid：代码强制复用参考解，只改坏一节的论证
+  ac_invalid_steps: [S3, S4, S5, S6]
+  ac_invalid_per_problem: 2
+  # 候选判题：遇到第一个非 AC 用例即停（判定结论不变，耗时降一个量级）
+  abort_on_failure: true

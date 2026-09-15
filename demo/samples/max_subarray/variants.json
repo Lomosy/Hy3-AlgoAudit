@@ -1,0 +1,62 @@
+[
+  {
+    "name": "correct",
+    "language": "python",
+    "label": {"exec_status": "AC", "process_valid": true, "first_error": null, "error_type": "NONE", "ac_but_invalid": false},
+    "steps": {
+      "S1": "求数组（元素可为负）的非空连续子数组的最大和。n<=1e5，|a_i|<=1e9。",
+      "S2": "以位置 i 结尾的最大子数组和 f(i) 满足最优子结构：f(i)=max(a[i], f(i-1)+a[i])。",
+      "S3": "Kadane 动态规划，单次线性扫描，维护 cur 与 best。",
+      "S4": "归纳证明：任一以 i 结尾的子数组要么单元素，要么由以 i-1 结尾的子数组扩展而来，转移覆盖全部情形。",
+      "S5": "时间 O(n)，空间 O(1)。",
+      "S6": "cur 初始化为 a[0]（等价地：cur<=0 时重置为当前元素），保证全负数组答案正确；答案不会是空子数组。",
+      "S7": "线性扫描实现，输出 best。"
+    },
+    "code": "import sys\n\ndef main():\n    data = sys.stdin.buffer.read().split()\n    n = int(data[0])\n    best = None\n    cur = 0\n    for i in range(n):\n        x = int(data[1 + i])\n        cur = x if (cur <= 0) else cur + x\n        if best is None or cur > best:\n            best = cur\n    print(best)\n\nmain()\n"
+  },
+  {
+    "name": "injected_E4_boundary",
+    "language": "python",
+    "label": {"exec_status": "WA", "process_valid": false, "first_error": "S6", "error_type": "E4", "ac_but_invalid": false},
+    "steps": {
+      "S1": "求数组（元素可为负）的非空连续子数组的最大和。n<=1e5，|a_i|<=1e9。",
+      "S2": "以位置 i 结尾的最大子数组和 f(i) 满足最优子结构：f(i)=max(a[i], f(i-1)+a[i])。",
+      "S3": "Kadane 动态规划，单次线性扫描，维护 cur 与 best。",
+      "S4": "归纳证明：任一以 i 结尾的子数组要么单元素，要么由以 i-1 结尾的子数组扩展而来，转移覆盖全部情形。",
+      "S5": "时间 O(n)，空间 O(1)。",
+      "S6": "边界：将 best 初始化为 0 即可，因为最大子数组和至少为 0。n=1 直接输出。",
+      "S7": "线性扫描实现，输出 best。"
+    },
+    "code": "import sys\n\ndef main():\n    data = sys.stdin.buffer.read().split()\n    n = int(data[0])\n    best = 0\n    cur = 0\n    for i in range(n):\n        x = int(data[1 + i])\n        cur = max(0, cur + x)\n        best = max(best, cur)\n    print(best)\n\nmain()\n"
+  },
+  {
+    "name": "injected_E2_algorithm",
+    "language": "python",
+    "label": {"exec_status": "WA", "process_valid": false, "first_error": "S2", "error_type": "E2", "ac_but_invalid": false},
+    "steps": {
+      "S1": "求数组（元素可为负）的非空连续子数组的最大和。n<=1e5，|a_i|<=1e9。",
+      "S2": "关键性质：最优子数组一定是从某个前缀的末尾开始到整个数组某个位置结束……即最大子数组和等于所有前缀和的最大值。因为把子数组起点固定在开头总能不劣于其他选择。",
+      "S3": "计算所有前缀和，输出前缀和的最大值。",
+      "S4": "由 S2 的性质，前缀和最大值即为答案。",
+      "S5": "时间 O(n)，空间 O(1)。",
+      "S6": "全负数组时前缀和最大值为第一个元素本身，输出即可。",
+      "S7": "线性扫描前缀和实现。"
+    },
+    "code": "import sys\n\ndef main():\n    data = sys.stdin.buffer.read().split()\n    n = int(data[0])\n    best = None\n    cur = 0\n    for i in range(n):\n        x = int(data[1 + i])\n        cur = cur + x\n        if best is None or cur > best:\n            best = cur\n    print(best)\n\nmain()\n"
+  },
+  {
+    "name": "ac_but_invalid_complexity",
+    "language": "python",
+    "label": {"exec_status": "AC", "process_valid": false, "first_error": "S5", "error_type": "E5", "ac_but_invalid": true},
+    "steps": {
+      "S1": "求数组（元素可为负）的非空连续子数组的最大和。n<=1e5，|a_i|<=1e9。",
+      "S2": "以位置 i 结尾的最大子数组和 f(i) 满足最优子结构：f(i)=max(a[i], f(i-1)+a[i])。",
+      "S3": "Kadane 动态规划，单次线性扫描，维护 cur 与 best。",
+      "S4": "归纳证明：任一以 i 结尾的子数组要么单元素，要么由以 i-1 结尾的子数组扩展而来，转移覆盖全部情形。",
+      "S5": "时间复杂度 O(n^2)：对每个右端点维护以其结尾的最大子数组和，需要向前回溯扫描；空间复杂度 O(n^2) 用于保存全部状态。由于 n<=1e5，O(n^2) 约为 1e10，勉强可以通过本题 5 秒时限。",
+      "S6": "cur 初始化为 a[0]，保证全负数组答案正确；子数组非空。",
+      "S7": "线性扫描实现，输出 best。"
+    },
+    "code": "import sys\n\ndef main():\n    data = sys.stdin.buffer.read().split()\n    n = int(data[0])\n    best = None\n    cur = 0\n    for i in range(n):\n        x = int(data[1 + i])\n        cur = x if (cur <= 0) else cur + x\n        if best is None or cur > best:\n            best = cur\n    print(best)\n\nmain()\n"
+  }
+]

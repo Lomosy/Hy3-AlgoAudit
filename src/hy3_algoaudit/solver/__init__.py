@@ -1,1 +1,2 @@
-"""自动解题 Agent：负责结构化解题过程与代码生成。"""
+from .solver import Solver  # noqa: F401
+from .repair import RepairAgent  # noqa: F401

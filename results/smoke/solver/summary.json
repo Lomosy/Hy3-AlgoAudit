@@ -1,0 +1,78 @@
+{
+  "pass_at_1": 0.5,
+  "process_valid_rate": 0.5,
+  "dual_correct_rate": 0.5,
+  "refine_at_1": 0.0,
+  "refine_at_2": 0.0,
+  "refine_at_3": 0.0,
+  "by_difficulty": {
+    "1200-1599": {
+      "n": 1,
+      "pass_rate": 1.0,
+      "process_valid_rate": 1.0,
+      "dual_correct_rate": 1.0
+    },
+    "800-1199": {
+      "n": 1,
+      "pass_rate": 0.0,
+      "process_valid_rate": 0.0,
+      "dual_correct_rate": 0.0
+    }
+  },
+  "by_tag": {
+    "dp": {
+      "n": 1,
+      "pass_rate": 1.0,
+      "error_types": {}
+    },
+    "implementation": {
+      "n": 1,
+      "pass_rate": 0.0,
+      "error_types": {
+        "E7": 1
+      }
+    },
+    "kadane": {
+      "n": 1,
+      "pass_rate": 1.0,
+      "error_types": {}
+    },
+    "math": {
+      "n": 1,
+      "pass_rate": 0.0,
+      "error_types": {
+        "E7": 1
+      }
+    }
+  },
+  "records": [
+    {
+      "problem_id": "a_plus_b",
+      "difficulty": 800,
+      "tags": [
+        "math",
+        "implementation"
+      ],
+      "exec_status": "WA",
+      "process_valid": false,
+      "error_type": "E7",
+      "first_error": "S7",
+      "quadrant": "implementation_error",
+      "repair_rounds": 3
+    },
+    {
+      "problem_id": "max_subarray",
+      "difficulty": 1200,
+      "tags": [
+        "dp",
+        "kadane"
+      ],
+      "exec_status": "AC",
+      "process_valid": true,
+      "error_type": "NONE",
+      "first_error": null,
+      "quadrant": "full_correct",
+      "repair_rounds": 0
+    }
+  ]
+}

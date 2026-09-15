@@ -1,0 +1,158 @@
+{
+  "full": {
+    "desc": "完整系统（全部组件）",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  },
+  "no_structural": {
+    "desc": "去掉 Layer1 规则/结构检查",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  },
+  "no_consistency": {
+    "desc": "去掉题解-代码一致性检查",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  },
+  "no_counterexample": {
+    "desc": "去掉反例验证",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  },
+  "no_fine_verify": {
+    "desc": "去掉二阶段精细验证",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  },
+  "fixed_low_budget": {
+    "desc": "关闭自适应推理预算（固定低预算）",
+    "metrics": {
+      "n": 4,
+      "process": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "first_error": {
+        "exact_accuracy": 0.0,
+        "pm1_accuracy": 0.0,
+        "labeled": 3
+      },
+      "error_type": {
+        "accuracy": 0.0,
+        "macro_f1": 0.0,
+        "confusion": {}
+      },
+      "ac_but_invalid": {
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    }
+  }
+}

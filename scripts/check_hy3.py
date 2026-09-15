@@ -2,7 +2,7 @@
 连通性自检：验证 .env 配置与 Hy3调用链路是否正常
 """
 
-from hy3_algoaudit.llm import Hy3Client
+from hy3_algoaudit._legacy.llm import Hy3Client
 
 def main() -> None:
     print("加载配置并连接 Hy3 ...")

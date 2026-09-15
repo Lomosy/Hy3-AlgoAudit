@@ -1,0 +1,441 @@
+{
+  "name": "ProcessEval-CP",
+  "version": "0.1.0",
+  "generated_by": "scripts/build_dataset.py",
+  "seed": 42,
+  "config": {
+    "paths": {
+      "codecontests_dir": "data/codecontests_data/dm-code_contests",
+      "taco_dir": "data/taco",
+      "interim_dir": "data/interim",
+      "dataset_dir": "data/processeval-cp",
+      "private_dir": "private/processeval-cp"
+    },
+    "dataset": {
+      "name": "ProcessEval-CP",
+      "version": "0.1.0",
+      "n_problems": 180,
+      "seed": 42,
+      "scan_train_shards": null
+    },
+    "filters": {
+      "exclude_sources": [
+        0
+      ],
+      "require_python3_solution": true,
+      "require_stdio": true,
+      "exclude_multiple_answers": true,
+      "max_time_limit_seconds": 8.0,
+      "default_time_limit_seconds": 2.0,
+      "default_memory_limit_bytes": 268435456,
+      "min_total_tests": 20,
+      "max_total_tests": 300,
+      "max_test_field_bytes": 65536,
+      "max_description_bytes": 131072,
+      "max_unclassified_ratio": 0.15
+    },
+    "sampling": {
+      "categories": [
+        "DP",
+        "Graph",
+        "DataStructure",
+        "BinarySearch",
+        "Greedy",
+        "Simulation"
+      ],
+      "rating_bins": [
+        [
+          0,
+          1200,
+          "<1200"
+        ],
+        [
+          1200,
+          1600,
+          "1200-1599"
+        ],
+        [
+          1600,
+          2000,
+          "1600-1999"
+        ],
+        [
+          2000,
+          2400,
+          "2000-2399"
+        ],
+        [
+          2400,
+          100000,
+          ">=2400"
+        ]
+      ],
+      "min_per_cell": 3,
+      "max_per_category_share": 0.3
+    },
+    "output_limits": {
+      "max_cases_per_problem": 30,
+      "max_case_field_bytes": 32768,
+      "max_problem_total_bytes": 262144,
+      "test_priority": [
+        "public",
+        "private",
+        "generated"
+      ]
+    },
+    "verification": {
+      "max_cases": 50,
+      "timeout_cap_seconds": 8.0,
+      "memory_limit_mb": 512,
+      "max_solutions_tried": 8,
+      "workers": 4,
+      "float_tolerance": 1e-06
+    },
+    "taco": {
+      "repo": "BAAI/TACO",
+      "mirror": "https://hf-mirror.com",
+      "columns": [
+        "url",
+        "name",
+        "source",
+        "difficulty",
+        "tags",
+        "skill_types",
+        "time_limit",
+        "memory_limit"
+      ],
+      "use_solutions": false,
+      "keep_raw": true
+    },
+    "candidates": {
+      "reasoning_effort": "high",
+      "temperature": 0.9,
+      "correct_max_retries": 3,
+      "natural_samples": 1,
+      "injected_error_types": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "injected_per_problem": 2,
+      "ac_invalid_steps": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "ac_invalid_per_problem": 2,
+      "abort_on_failure": true
+    },
+    "_quiet": true
+  },
+  "stages": {
+    "riegeli_check": null,
+    "pool": {
+      "shards": 130,
+      "records": 13610,
+      "passed": 7087,
+      "reject_reasons": {
+        "no_python3_solution": 5254,
+        "too_few_tests": 856,
+        "multiple_answers": 1520,
+        "too_many_tests": 32,
+        "time_limit_too_large": 45,
+        "non_stdio": 22
+      },
+      "by_source": {
+        "CODEFORCES": 4574,
+        "ATCODER": 1149,
+        "AIZU": 1364
+      }
+    },
+    "taco": {
+      "contest_index": 4558,
+      "title": 1171,
+      "none": 1358
+    },
+    "sampling": {
+      "target_n": 8,
+      "eligible": 10,
+      "non_empty_cells": 12,
+      "effective_min_per_cell": 1,
+      "max_per_category": 2,
+      "quota_total": 8,
+      "filled_beyond_quota": 0,
+      "actual_cells": {
+        "BinarySearch@1600-1999": 1,
+        "DP@1600-1999": 2,
+        "DataStructure@1600-1999": 1,
+        "Graph@<1200": 1,
+        "Greedy@<1200": 1,
+        "Simulation@1600-1999": 1,
+        "Simulation@<1200": 1
+      },
+      "actual_by_category": {
+        "DP": 2,
+        "DataStructure": 1,
+        "BinarySearch": 1,
+        "Graph": 1,
+        "Simulation": 2,
+        "Greedy": 1
+      },
+      "under_min_cells": [],
+      "zero_quota_cells": [
+        "BinarySearch@1200-1599",
+        "DP@<1200",
+        "DataStructure@1200-1599",
+        "Greedy@1600-1999",
+        "Simulation@1200-1599"
+      ],
+      "supply": {
+        "BinarySearch@1200-1599": 1,
+        "BinarySearch@1600-1999": 1,
+        "DP@1600-1999": 4,
+        "DP@<1200": 2,
+        "DataStructure@1200-1599": 1,
+        "DataStructure@1600-1999": 3,
+        "Graph@<1200": 1,
+        "Greedy@1600-1999": 1,
+        "Greedy@<1200": 3,
+        "Simulation@1200-1599": 2,
+        "Simulation@1600-1999": 3,
+        "Simulation@<1200": 3
+      },
+      "supply_primary": {
+        "DP@1600-1999": 4,
+        "DP@<1200": 2,
+        "DataStructure@1200-1599": 1,
+        "DataStructure@1600-1999": 1,
+        "Greedy@<1200": 1,
+        "Simulation@1200-1599": 1
+      },
+      "oversampled": null,
+      "quota": {
+        "BinarySearch@1200-1599": 0,
+        "BinarySearch@1600-1999": 1,
+        "DP@1600-1999": 2,
+        "DP@<1200": 0,
+        "DataStructure@1200-1599": 0,
+        "DataStructure@1600-1999": 1,
+        "Graph@<1200": 1,
+        "Greedy@1600-1999": 0,
+        "Greedy@<1200": 1,
+        "Simulation@1200-1599": 0,
+        "Simulation@1600-1999": 1,
+        "Simulation@<1200": 1
+      }
+    },
+    "verification": {
+      "candidates_verified": 10,
+      "passed": 8,
+      "rejected": 1,
+      "rejected_detail": [
+        {
+          "pid": "cc-train-051-0012",
+          "attempts": 2,
+          "reasons": [
+            "failed_public_cases"
+          ]
+        }
+      ]
+    },
+    "taco_tag_supplement": {
+      "with_taco_tags": 8,
+      "with_taco_skill_types": 8,
+      "difficulty_from_taco": 0,
+      "category_from_taco": 0
+    },
+    "comparison_modes": {
+      "counts": {
+        "exact": 0,
+        "token": 8,
+        "float": 0
+      },
+      "relaxed_modes": {
+        "exact": [],
+        "float": []
+      }
+    }
+  },
+  "totals": {
+    "problems": 8,
+    "testcases": 240,
+    "testcases_bytes": 23087
+  },
+  "problems": [
+    {
+      "pid": "cc-train-010-0033",
+      "cc_id": "cc-train-010-0033",
+      "name": "19_B. Checkout Assistant",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "1600-1999",
+      "cf_contest_id": 19,
+      "cf_index": "B",
+      "cf_rating": 1900,
+      "n_cases": 30,
+      "cases_bytes": 1995,
+      "statement_bytes": 1050,
+      "reference_bytes": 199,
+      "reference_sha256": "3d8c39f02d11d2cbcd977cf1cc557bd34c35fadce34d1cc18173717b0c449809",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-010-0033"
+    },
+    {
+      "pid": "cc-train-022-0028",
+      "cc_id": "cc-train-022-0028",
+      "name": "1477_B. Nezzar and Binary String",
+      "source": "CODEFORCES",
+      "category": "DataStructure",
+      "difficulty_bin": "1600-1999",
+      "cf_contest_id": 1477,
+      "cf_index": "B",
+      "cf_rating": 1900,
+      "n_cases": 30,
+      "cases_bytes": 803,
+      "statement_bytes": 2196,
+      "reference_bytes": 2652,
+      "reference_sha256": "2692a562a466dd9f585a81c8c2b0b107d65808698690335f82b88baf8344b8a7",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-022-0028"
+    },
+    {
+      "pid": "cc-train-030-0007",
+      "cc_id": "cc-train-030-0007",
+      "name": "102_D. Buses",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "1600-1999",
+      "cf_contest_id": 102,
+      "cf_index": "D",
+      "cf_rating": 1700,
+      "n_cases": 30,
+      "cases_bytes": 4250,
+      "statement_bytes": 2282,
+      "reference_bytes": 647,
+      "reference_sha256": "6a5be5f055505b6edad8d798aa3c02c6ed45c864abf2d1753ff2a0a37041bd10",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-030-0007"
+    },
+    {
+      "pid": "cc-train-036-0059",
+      "cc_id": "cc-train-036-0059",
+      "name": "814_C. An impassioned circulation of affection",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "1600-1999",
+      "cf_contest_id": 814,
+      "cf_index": "C",
+      "cf_rating": 1600,
+      "n_cases": 30,
+      "cases_bytes": 4812,
+      "statement_bytes": 2797,
+      "reference_bytes": 487,
+      "reference_sha256": "916cb8259cdd0972042d57109ceb2128cde2ba84bb620f6d04108b925ab70f3d",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-036-0059"
+    },
+    {
+      "pid": "cc-train-044-0063",
+      "cc_id": "cc-train-044-0063",
+      "name": "910_A. The Way to Home",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "<1200",
+      "cf_contest_id": 910,
+      "cf_index": "A",
+      "cf_rating": 800,
+      "n_cases": 30,
+      "cases_bytes": 2481,
+      "statement_bytes": 1894,
+      "reference_bytes": 142,
+      "reference_sha256": "c51744955af8f783acddaa3f2eba878f8c3964991f9d8dc44c7107bc9f0dd536",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-044-0063"
+    },
+    {
+      "pid": "cc-train-098-0052",
+      "cc_id": "cc-train-098-0052",
+      "name": "667_C. Reberland Linguistics",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "1600-1999",
+      "cf_contest_id": 667,
+      "cf_index": "C",
+      "cf_rating": 1800,
+      "n_cases": 30,
+      "cases_bytes": 4350,
+      "statement_bytes": 2113,
+      "reference_bytes": 313,
+      "reference_sha256": "2c389c6c77fa4a5d11fa262fb7dcfd4c95ce25d55023fe4ab23bb00b8c870ebb",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-098-0052"
+    },
+    {
+      "pid": "cc-train-101-0022",
+      "cc_id": "cc-train-101-0022",
+      "name": "1360_B. Honest Coach",
+      "source": "CODEFORCES",
+      "category": "Greedy",
+      "difficulty_bin": "<1200",
+      "cf_contest_id": 1360,
+      "cf_index": "B",
+      "cf_rating": 800,
+      "n_cases": 30,
+      "cases_bytes": 2220,
+      "statement_bytes": 1996,
+      "reference_bytes": 98,
+      "reference_sha256": "ffa40a5af0a5afe35ac6fa20b88f1a66d0709e8c245d039ccb70536e4e08c68e",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-101-0022"
+    },
+    {
+      "pid": "cc-train-121-0028",
+      "cc_id": "cc-train-121-0028",
+      "name": "1499_B. Binary Removals",
+      "source": "CODEFORCES",
+      "category": "DP",
+      "difficulty_bin": "<1200",
+      "cf_contest_id": 1499,
+      "cf_index": "B",
+      "cf_rating": 1000,
+      "n_cases": 30,
+      "cases_bytes": 2176,
+      "statement_bytes": 1792,
+      "reference_bytes": 131,
+      "reference_sha256": "3b11358977d0cf1cdaeef175cc98a76b1fb4874bdf858c4488f6ecbd0ec8f807",
+      "comparison": "exact",
+      "taco_match": "contest_index",
+      "path": "data/processeval-cp/cc-train-121-0028"
+    }
+  ],
+  "elapsed_seconds": 0.0,
+  "artifacts": {
+    "problem": "data/processeval-cp/<pid>/problem.md",
+    "meta": "data/processeval-cp/<pid>/meta.json",
+    "tests": "data/processeval-cp/<pid>/tests.json",
+    "reference": "data/processeval-cp/<pid>/reference.py",
+    "public_variants": "data/processeval-cp/<pid>/variants.json",
+    "reference_evidence": "private/processeval-cp/<pid>/verification.json",
+    "private_variants": "private/processeval-cp/<pid>/variants.json",
+    "private_labels": "private/processeval-cp/<pid>/labels.json"
+  },
+  "notes": [
+    "一个目录 = 一道题；题面/元数据/用例/参考解/公开候选各自独立成文件。",
+    "tests.json 是参考解验证用例集的前缀，未写入任何未经验证的用例。",
+    "meta.json 的 comparison 字段是离线验证与应用判题的共同口径，必须按题取用。",
+    "首错定位、错误类型标注、注入候选正文均在 private/ 下，不入公开仓库。"
+  ]
+}

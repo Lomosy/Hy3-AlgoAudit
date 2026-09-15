@@ -1,0 +1,58 @@
+{
+  "id": "cc-train-098-0052",
+  "name": "667_C. Reberland Linguistics",
+  "cc_id": "cc-train-098-0052",
+  "source": "CODEFORCES",
+  "difficulty": 1800,
+  "difficulty_name": "C",
+  "difficulty_bin": "1600-1999",
+  "difficulty_bin_source": "cf_rating",
+  "category": "DP",
+  "category_source": "cf_tags",
+  "category_matched": [
+    "dp",
+    "dynamic programming"
+  ],
+  "categories_all": [
+    "DP",
+    "Simulation"
+  ],
+  "tags": [
+    "dp",
+    "implementation",
+    "strings"
+  ],
+  "taco_tags": [
+    "String algorithms",
+    "Dynamic programming",
+    "Implementation"
+  ],
+  "taco_skill_types": [
+    "Dynamic programming"
+  ],
+  "taco_difficulty": "MEDIUM_HARD",
+  "taco_match": "contest_index",
+  "taco_url": "https://codeforces.com/problemset/problem/667/C",
+  "time_limit_seconds": 1.0,
+  "time_limit_source": "dataset",
+  "memory_limit_bytes": 256000000,
+  "io_mode": "stdio",
+  "comparison": "token",
+  "tests": {
+    "total": 30,
+    "by_origin": {
+      "public": 2,
+      "private": 10,
+      "generated": 18
+    },
+    "cases_digest": "b57654b56c2c6a7b414bd3514b54a16ba15c169955b3fb2c5f77fbe5ddb5c359"
+  },
+  "reference": {
+    "language": "python",
+    "sha256": "2c389c6c77fa4a5d11fa262fb7dcfd4c95ce25d55023fe4ab23bb00b8c870ebb",
+    "verified": true
+  },
+  "n_solutions": 569,
+  "n_python3_solutions": 49,
+  "n_incorrect_solutions": 1147
+}

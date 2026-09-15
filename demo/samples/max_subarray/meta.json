@@ -1,0 +1,6 @@
+{
+  "id": "max_subarray",
+  "difficulty": 1200,
+  "tags": ["dp", "kadane"],
+  "notes": "difficulty is the Codeforces-style rating; tags follow the Codeforces/TACO vocabulary"
+}

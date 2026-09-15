@@ -1,0 +1,1 @@
+{"pid": "p1", "labels": {"correct": {"kind": "correct", "exec_status": "AC", "process_valid": true, "first_error": null, "error_type": "NONE", "ac_but_invalid": false}, "injected-E2-S3": {"kind": "injected", "exec_status": "WA", "process_valid": false, "first_error": "S3", "error_type": "E2", "ac_but_invalid": false}}}

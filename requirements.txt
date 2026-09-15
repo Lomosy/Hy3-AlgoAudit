@@ -7,3 +7,16 @@ openai>=1.0
 
 # 环境变量加载（读取 .env）
 python-dotenv>=1.0
+
+# 双轨评估系统（结果 x 过程）
+pydantic>=2.5
+
+# --- 数据构建（builder 模块） ---
+# 配置文件解析
+PyYAML>=6.0
+# Riegeli chunk 解压（本数据集为 Zstd；Brotli 作为兼容兜底）
+zstandard>=0.22
+brotli>=1.1
+# TACO 数据集读取（parquet）
+pyarrow>=15.0
+fsspec>=2023.1

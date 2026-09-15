@@ -1,0 +1,62 @@
+{
+  "id": "cc-train-121-0028",
+  "name": "1499_B. Binary Removals",
+  "cc_id": "cc-train-121-0028",
+  "source": "CODEFORCES",
+  "difficulty": 1000,
+  "difficulty_name": "B",
+  "difficulty_bin": "<1200",
+  "difficulty_bin_source": "cf_rating",
+  "category": "DP",
+  "category_source": "cf_tags",
+  "category_matched": [
+    "dp",
+    "dynamic programming"
+  ],
+  "categories_all": [
+    "DP",
+    "Greedy",
+    "Simulation"
+  ],
+  "tags": [
+    "brute force",
+    "dp",
+    "greedy",
+    "implementation"
+  ],
+  "taco_tags": [
+    "Dynamic programming",
+    "Complete search",
+    "Implementation",
+    "Greedy algorithms"
+  ],
+  "taco_skill_types": [
+    "Dynamic programming",
+    "Complete search",
+    "Greedy algorithms"
+  ],
+  "taco_difficulty": "EASY",
+  "taco_match": "contest_index",
+  "taco_url": "https://codeforces.com/problemset/problem/1499/B",
+  "time_limit_seconds": 2.0,
+  "time_limit_source": "dataset",
+  "memory_limit_bytes": 256000000,
+  "io_mode": "stdio",
+  "comparison": "token",
+  "tests": {
+    "total": 30,
+    "by_origin": {
+      "public": 1,
+      "generated": 29
+    },
+    "cases_digest": "c72e7ae5c3c3d74140330f28798a3affd718bc0b1c1b37bcc7693491bae1c727"
+  },
+  "reference": {
+    "language": "python",
+    "sha256": "3b11358977d0cf1cdaeef175cc98a76b1fb4874bdf858c4488f6ecbd0ec8f807",
+    "verified": true
+  },
+  "n_solutions": 305,
+  "n_python3_solutions": 100,
+  "n_incorrect_solutions": 307
+}

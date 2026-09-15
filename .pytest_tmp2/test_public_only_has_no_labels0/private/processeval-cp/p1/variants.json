@@ -1,0 +1,1 @@
+[{"name": "injected-E2-S3", "language": "python", "code": "print(0.5)", "steps": {"S1": "step 1 reasoning", "S2": "step 2 reasoning", "S3": "wrong algorithm here", "S4": "follows the wrong idea", "S5": "step 5 reasoning", "S6": "step 6 reasoning", "S7": "step 7 reasoning"}}]

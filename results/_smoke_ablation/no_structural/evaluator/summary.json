@@ -1,0 +1,23 @@
+{
+  "n": 4,
+  "process": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "false_positive_rate": 0.0
+  },
+  "first_error": {
+    "exact_accuracy": 0.0,
+    "pm1_accuracy": 0.0,
+    "labeled": 3
+  },
+  "error_type": {
+    "accuracy": 0.0,
+    "macro_f1": 0.0,
+    "confusion": {}
+  },
+  "ac_but_invalid": {
+    "precision": 0.0,
+    "recall": 0.0
+  }
+}

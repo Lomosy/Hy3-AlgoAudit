@@ -1,7 +1,7 @@
 """解题器自检：结构化输出+解析+判题闭环"""
 from hy3_algoaudit.judge.judge import judge_python
 from hy3_algoaudit.judge.result import TestCase
-from hy3_algoaudit.solver.solver import solve
+from hy3_algoaudit._legacy.solver.solver import solve
 
 
 PROBLEM = """输入两个整数 a 和 b，输出它们的和。

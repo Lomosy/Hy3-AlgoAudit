@@ -128,6 +128,56 @@
 
 ## 环境要求与运行方式
 
+- Python ≥ 3.10（推荐 3.11/3.13），依赖见 `pyproject.toml`；
 - 通过 Hy3 完成模型能力调用，无需训练或微调；
-- API Key 等密钥通过**环境变量或配置文件**传入，**不得**硬编码或提交进仓库；
-- 具体依赖、环境配置样例与运行步骤详见仓库内 `docs` 与配置文件，将在核心开发阶段补齐。
+- API Key 等密钥通过**环境变量或 `.env` 文件**传入，**不得**硬编码或提交进仓库。
+
+### 安装
+
+```bash
+pip install -e .            # 可编辑安装（src-layout）
+cp .env.example .env        # 填入 HY3_BASE_URL / HY3_API_KEY 等
+```
+
+### 命令行（`hy3-audit`）
+
+```bash
+hy3-audit demo                          # 端到端演示（离线 mock，无需 API Key）
+hy3-audit demo --real                   # 真实调用 Hy3 的端到端演示
+hy3-audit solve  --problem problem.md --tests tests.json [--reference reference.py]
+hy3-audit evaluate --problem problem.md --solution solution.json
+hy3-audit judge  --code sol.py --tests tests.json [--comparison token|float|exact]
+hy3-audit benchmark --dataset data/processeval-cp [--private private/bench] [--only both]
+```
+
+### 数据集与候选过程
+
+- `data/processeval-cp/`：每题一目录（`problem.md` / `meta.json` / `tests.json` / `reference.py`），
+  仅含公开材料——任何人可跑基准，但无法自行评分（冰山策略）；
+- 候选解题过程（变体）与 ground-truth 标注放在**私有目录**（如 `private/bench/`），
+  评测时用 `--private` 挂载后合并读取。
+
+### 实验脚本（`scripts/`）
+
+```bash
+# 1) 构建四类候选过程变体（correct / natural / injected / ac-but-invalid，§15.3）
+#    全部写入私有目录，exec 状态一律以沙箱真实判题为准
+python scripts/build_variants.py --data-root data/processeval-cp \
+    --private-root private/bench [--problems <id,id,...>] [--inject-types E1,E2,E4,E5,E7]
+
+# 2) 修复策略对比实验（§17 Refine@k：One-shot vs Execution-only vs Process-guided）
+python scripts/run_repair_experiment.py --dataset data/processeval-cp \
+    --private private/bench --max-k 3 --out results/repair_experiment
+
+# 3) 过程评估器消融实验（§21 六配置：去结构检查 / 去一致性 / 去反例 / 去精验 / 固定预算）
+python scripts/run_ablation.py --dataset data/processeval-cp \
+    --private private/bench --out results/ablation
+```
+
+三者均支持 `--mock` 离线演示（`build_variants.py` 除外——注入模板需要真实模型）。
+
+### 测试
+
+```bash
+python -m pytest tests/ -q     # 单元 + 集成回归（mock，无需网络）
+```

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>Hy3-AlgoAudit 报告 - a_plus_b</title>
+<style>
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; margin: 0;
+        background: #f8fafc; color: #0f172a; }
+  header { background: #0f172a; color: #fff; padding: 24px 32px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header .meta { color: #94a3b8; font-size: 13px; margin-top: 6px; }
+  main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 999px;
+          font-size: 13px; font-weight: 600; }
+  .badge.green { background: #dcfce7; color: #166534; }
+  .badge.amber { background: #fef3c7; color: #92400e; }
+  .badge.red   { background: #fee2e2; color: #991b1b; }
+  pre { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+        padding: 16px; overflow-x: auto; font-size: 12.5px; line-height: 1.55; }
+  .exec { font-weight: 700; color: #dc2626; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Hy3-AlgoAudit 评估报告：a_plus_b</h1>
+  <div class="meta">模式 solve · 时间 2026-09-15T02:03:14
+   · 执行状态 <span class="exec">WA</span>
+   · 修复轮数 1 · Tokens 17156</div>
+</header>
+<main>
+  <p><span class="badge red">主要为实现层错误（过程成立 × 结果错误）</span></p>
+  <pre># Hy3-AlgoAudit 评估报告：a_plus_b
+
+- 模式：AI 自动解题
+- 时间：2026-09-15T02:03:14
+- 定向修复轮数：1
+
+## 总体结论
+
+**主要为实现层错误（过程成立 × 结果错误）**
+
+&gt; 执行 WA，首个实质性错误位于 S7，错误类型 E7（实现错误）。依据：执行失败（WA）：output mismatch (token mode)
+
+## 结果通道（沙箱执行）
+
+- 状态：**WA**（通过 0/2）
+- 首个失败测试：#0 — output mismatch (token mode)
+  - 测试 #0: WA (264.5 ms)
+  - 测试 #1: RE (271.7 ms)
+
+## 过程通道（过程评估器）
+
+- 过程是否有效：**无效**
+- 首个错误步骤：**S7**（最终实现）
+- 错误类型：**E7** 实现错误
+- 置信度：0.90
+
+### 分步审查
+
+| 步骤 | 名称 | 判定 | 置信度 | 错误类型 | 依据 |
+|---|---|---|---|---|---|
+| S1 | 题意与约束理解 | correct | 0.90 | - | mock: 推理成立 |
+| S2 | 关键观察与性质 | correct | 0.90 | - | mock: 推理成立 |
+| S3 | 算法设计 | correct | 0.90 | - | mock: 推理成立 |
+| S4 | 正确性推导 | correct | 0.90 | - | mock: 推理成立 |
+| S5 | 复杂度分析 | correct | 0.90 | - | mock: 推理成立 |
+| S6 | 边界条件 | correct | 0.90 | - | mock: 推理成立 |
+| S7 | 最终实现 | correct | 0.90 | - | mock: 推理成立 |
+
+### 证据清单
+
+- ✅ **[consistency]** (强度 2) S7 ：题解与代码一致
+- ❌ **[sandbox]** (强度 4) S7 E7：执行失败（WA）：output mismatch (token mode)
+
+## 修复记录
+
+- 第 1 轮定向修复：首错 S7 (E7) -&gt; 执行 WA
+
+## 最终题解（S1-S7）
+
+### S1 题意与约束理解
+
+给定长度 n 的整数数组（元素可为负），求连续子数组的最大和，子数组不能为空。n 最大 1e5，|a_i| &lt;= 1e9，答案可能达 1e14，需使用 64 位整数。
+
+### S2 关键观察与性质
+
+最大子数组问题具有最优子结构：以位置 i 结尾的最大子数组和 f(i) 只依赖 f(i-1)。若 f(i-1) &gt; 0，则将其接上更优；否则从 a[i] 重新开始。这是 Kadane 算法的核心不变量。
+
+### S3 算法设计
+
+采用 Kadane 动态规划：单次线性扫描，维护 cur（以当前元素结尾的最大子数组和）与 best（全局最大值）。无需额外数据结构。
+
+### S4 正确性推导
+
+归纳证明：f(1)=a[1]。对 i&gt;1，任何以 i 结尾的子数组要么只含 a[i]，要么是以 i-1 结尾的某个子数组加上 a[i]，故 f(i)=max(a[i], f(i-1)+a[i])。转移覆盖所有情形，归纳成立。
+
+### S5 复杂度分析
+
+时间复杂度 O(n)，空间复杂度 O(1)（数组本身 O(n) 读入）。n &lt;= 1e5 时完全满足限制。
+
+### S6 边界条件
+
+全负数组：cur 初始化为 a[0] 而非 0，保证答案为最大单元素，不会错误地输出空子数组和 0。n=1 时直接输出 a[0]。使用 Python 整数，无溢出问题。
+
+### S7 最终实现
+
+从 stdin 一次读入全部数据，线性扫描输出答案。
+
+### 代码
+
+```python
+import sys
+
+def main():
+    data = sys.stdin.read().split()
+    n = int(data[0])
+    a = list(map(int, data[1:1 + n]))
+    best = a[0]
+    cur = a[0]
+    for x in a[1:]:
+        cur = max(x, cur + x)
+        best = max(best, cur)
+    print(best)
+
+main()
+```
+</pre>
+</main>
+</body>
+</html>

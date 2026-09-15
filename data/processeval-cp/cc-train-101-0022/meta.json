@@ -1,0 +1,56 @@
+{
+  "id": "cc-train-101-0022",
+  "name": "1360_B. Honest Coach",
+  "cc_id": "cc-train-101-0022",
+  "source": "CODEFORCES",
+  "difficulty": 800,
+  "difficulty_name": "B",
+  "difficulty_bin": "<1200",
+  "difficulty_bin_source": "cf_rating",
+  "category": "Greedy",
+  "category_source": "cf_tags",
+  "category_matched": [
+    "greedy",
+    "greedy algorithms"
+  ],
+  "categories_all": [
+    "Greedy",
+    "Simulation"
+  ],
+  "tags": [
+    "greedy",
+    "sortings"
+  ],
+  "taco_tags": [
+    "Sorting",
+    "Greedy algorithms"
+  ],
+  "taco_skill_types": [
+    "Sorting",
+    "Greedy algorithms"
+  ],
+  "taco_difficulty": "EASY",
+  "taco_match": "contest_index",
+  "taco_url": "https://codeforces.com/problemset/problem/1360/B",
+  "time_limit_seconds": 2.0,
+  "time_limit_source": "dataset",
+  "memory_limit_bytes": 256000000,
+  "io_mode": "stdio",
+  "comparison": "token",
+  "tests": {
+    "total": 30,
+    "by_origin": {
+      "public": 1,
+      "generated": 29
+    },
+    "cases_digest": "b5506d7949e621d4d0ed2b2a2ad1725c4def6113cb2e218e82d1dff3154c418f"
+  },
+  "reference": {
+    "language": "python",
+    "sha256": "ffa40a5af0a5afe35ac6fa20b88f1a66d0709e8c245d039ccb70536e4e08c68e",
+    "verified": true
+  },
+  "n_solutions": 2799,
+  "n_python3_solutions": 2266,
+  "n_incorrect_solutions": 550
+}
